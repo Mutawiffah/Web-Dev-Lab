@@ -46,23 +46,22 @@
                     <div class="task">
                       <h4>Assignment 1</h4>
                       <p>CV using only HTML and CSS.</p>
-                     
                       <a href="assignment_1/index.html" target="_blank">Open</a>
                     </div>
                     <div class="task">
                       <h4>Assignment 2</h4>
                       <p>Checkout Page.</p>
-                      <a href="assignment_2" target="_blank">Open</a>
+                      <a href="assignment_2/index.html" target="_blank">Open</a>
                     </div>
                     <div class="task">
                       <h4>Lab Task 1</h4>
                       <p>landing page for e-commerce website.</p>
-                      <a href="labtask_1" target="_blank">Open</a>
+                      <a href="http://127.0.0.1:3000/labtasks/labtask_1/index.html" target="_blank">Open</a>
                     </div>
                     <div class="task">
                       <h4>Lab Task 2</h4>
                       <p>e-commerce website using HTML, CSS, and Bootstrap.</p>
-                      <a href="labtask2" target="_blank">Open</a>
+                      <a href="http://127.0.0.1:3000/labtasks/labtask_2/index.html" target="_blank">Open</a>
                     </div>
                   </div>
                 </div>
@@ -136,18 +135,15 @@
           const toggle = document.getElementById("previousTasksToggle");
           const menu = document.getElementById("megaMenu");
         
-          // Toggle mega menu on click
           toggle.addEventListener("click", function(e) {
             e.preventDefault();
             menu.classList.toggle("active");
         
-            // Close other mega menus (if more in future)
             document.querySelectorAll(".mega-menu").forEach(el => {
               if (el !== menu) el.classList.remove("active");
             });
           });
         
-          // Close on outside click
           document.addEventListener("click", function(e) {
             const isInside = toggle.contains(e.target) || menu.contains(e.target);
             if (!isInside) {
