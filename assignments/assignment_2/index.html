@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
     <link rel="stylesheet" href="mycss.css">
-    <script src="javascript.js"></script>
 </head>
 <body>
     <h2>Checkout Page</h2>
@@ -40,6 +39,54 @@
 
         <button type="submit">Submit</button>
     </form>
-    <script src="script.js"></script>
+    
+    <script>
+        document.getElementById("checkoutForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+          let valid = true;
+    
+          function validateField(id, errorMessage) {
+            let field = document.getElementById(id);
+            let error = document.getElementById(id + "Error");
+            if (!field.checkValidity()) {
+              error.textContent = errorMessage;
+              valid = false;
+            } else {
+              error.textContent = "";
+            }
+          }
+    
+          validateField("name", "Enter a valid name (only alphabets).");
+          validateField("email", "Enter a valid email.");
+          validateField("phone", "Enter a valid phone number (10-15 digits).");
+          validateField("card", "Credit card must be 16 digits.");
+          validateField("cvv", "CVV must be exactly 3 digits.");
+    
+          let address = document.getElementById("address");
+          let addressError = document.getElementById("addressError");
+          if (!address.value.trim()) {
+            addressError.textContent = "Address is required.";
+            valid = false;
+          } else {
+            addressError.textContent = "";
+          }
+    
+          let expiry = document.getElementById("expiry");
+          let expiryError = document.getElementById("expiryError");
+          let currentDate = new Date();
+          let selectedDate = new Date(expiry.value + "-01");
+          if (selectedDate <= currentDate) {
+            expiryError.textContent = "Expiry date must be in the future.";
+            valid = false;
+          } else {
+            expiryError.textContent = "";
+          }
+    
+          if (valid) {
+            alert("Form submitted successfully!");
+            document.getElementById("checkoutForm").reset();
+          }
+        });
+      </script>
 </body>
 </html>
