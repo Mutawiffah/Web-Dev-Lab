@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "nodemon": "^3.1.10"
+  },
+  "name": "web-dev-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mutawiffah/Web-Dev-Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mutawiffah/Web-Dev-Lab/issues"
+  },
+  "homepage": "https://github.com/Mutawiffah/Web-Dev-Lab#readme",
+  "devDependencies": {},
+  "description": ""
+}
