@@ -114,41 +114,91 @@ body {
   color: white;
 }
 
-.email-signup {
-  text-align: center;
-  padding: 50px 20px;
-  background: #f5f5f5;
-}
-
-.email-signup input {
-  width: 60%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-.email-signup button {
-  background: black;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  transition: background 0.3s ease-in-out;
-  margin-left: 10px;
-}
-
-.email-signup button:hover {
-  background: #50292e;
-}
-
 footer {
-  background: #f8f8f8;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 20px;
+  background: white;
+  color: black;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.email-footer-text {
+  text-align: left;
+  font-size: 14px;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 footer p {
-  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+  max-width: 600px;
+}
+
+footer .signup-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black;
+}
+
+footer .footer-options {
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.footer-options p {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.signup-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black;
+}
+
+.top-nav {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-left a,
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
 .ticker__wrapper {
@@ -191,10 +241,6 @@ footer p {
   .hero-content p {
     font-size: 16px;
   }
-
-  .email-signup input {
-    width: 80%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -210,10 +256,6 @@ footer p {
 @media (max-width: 576px) {
   .hero-content p {
     font-size: 14px;
-  }
-
-  .email-signup input {
-    width: 100%;
   }
 
   .ticker__wrapper {
