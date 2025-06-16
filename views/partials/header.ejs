@@ -1,0 +1,10 @@
+<header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+    <% if (typeof session !== 'undefined' && session.userId) { %>
+      <a href="/logout">Logout</a>
+    <% } %>
+  </nav>
+</header>
