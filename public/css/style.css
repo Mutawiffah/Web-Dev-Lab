@@ -172,47 +172,63 @@ body {
 }
 
 footer {
-  background: white;
-  color: black;
-  padding: 40px 20px;
-  text-align: left;
+  background-color: #000;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
 }
 
-.email-footer-text {
-  text-align: left;
-  font-size: 14px;
-  max-width: 600px;
-  margin: 20px 0;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-footer h3 {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
+.email-signup {
+  width: 100%;
+  max-width: 400px;
+}
+
+.email-signup h3 {
+  font-size: 24px;
   margin-bottom: 15px;
 }
 
-footer p {
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 10px 0;
-  max-width: 600px;
+.email-signup p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-footer .signup-link {
-  text-decoration: underline;
-  font-weight: bold;
-  color: black;
-}
-
-footer .footer-options {
-  margin-top: 30px;
-  font-size: 13px;
-}
-
-.footer-options p {
+.email-signup a {
   display: inline-block;
-  margin-right: 30px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: underline;
+  padding: 10px 20px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
 }
 
 .signup-link {
@@ -228,6 +244,36 @@ footer .footer-options {
 
 .brand-text .btn {
   margin-top: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;   
+  gap: 20px;                        
+  flex-wrap: wrap;                  
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 300px;               
+  height: auto;                    
+  border-radius: 10px;             
+  object-fit: cover;               
+}
+
+
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;         
+    align-items: center;         
+  }
+
+  .image-container img {
+    width: 80%;                      
+    margin-bottom: 20px;          
+  }
 }
 
 @media (max-width: 992px) {
@@ -275,5 +321,12 @@ footer .footer-options {
 
   .nav-right a {
     margin: 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

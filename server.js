@@ -73,6 +73,14 @@ server.get("/logout", (req, res) => {
   });
 });
 
+server.get("/product", (req, res) => {
+  res.render("product", { title: "Product Page" });
+});
+
+server.get("/about", (req, res) => {
+  res.render("about", { title: "About Us" });
+});
+
 server.listen(4000, () => {
   console.log("🚀 Server started at http://localhost:4000");
 });

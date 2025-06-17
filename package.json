@@ -1,13 +1,15 @@
 {
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.18.1",
-    "mongoose": "^8.15.2",
-    "nodemon": "^3.1.10"
+    "mongoose": "^8.16.0",
+    "nodemon": "^3.1.10",
+    "slick-carousel": "^1.8.1"
   },
   "name": "web-dev-lab",
   "version": "1.0.0",
