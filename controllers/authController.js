@@ -11,10 +11,23 @@ async function handleUserSignup(req, res) {
 async function handleUserLogin(req, res) {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
-  if (!user) return res.render("login", { error: "Invalid credentials" });
+
+  if (!user) {
+    return res.render("login", {
+      title: "Login",
+      pageStyle: "login",
+      error: "Invalid credentials"
+    });
+  }
 
   const match = await bcrypt.compare(password, user.password);
-  if (!match) return res.render("login", { error: "Invalid credentials" });
+  if (!match) {
+    return res.render("login", {
+      title: "Login",
+      pageStyle: "login",
+      error: "Invalid credentials"
+    });
+  }
 
   req.session.userId = user._id;
   return res.redirect("/landingpage");

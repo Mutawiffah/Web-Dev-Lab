@@ -1,21 +1,21 @@
-<% layout = 'layout' %>
-<% block('styles') { %>
-  <link rel="stylesheet" href="/css/login.css" />
-<% } %>
+<link rel="stylesheet" href="/css/login.css" />
 
-<h1>Login</h1>
-
-<% if (typeof error !== "undefined") { %>
-  <p style="color:red;"><%= error %></p>
-<% } %>
-
-<form method="POST" action="/login">
-  <label>Email</label>
-  <input type="text" name="email" required placeholder="Email" />
-
-  <label>Password</label>
-  <input type="password" name="password" required placeholder="Password" />
-
-  <button type="submit">Login</button>
-  <p>Don’t have an account? <a href="/signup">Sign up</a></p>
-</form>
+<main class="login-wrapper">
+  <div class="login-container">
+    <div class="logo">
+        <img src="/assets/c:\Users\HP\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\48FB20EE25F8EC60949E66E5EBB46600\WhatsApp Image 2025-06-17 at 18.22.31_f486818f.jpg" alt="Kent & Curwen Logo" />
+    </div>
+    <h2>Sign in</h2>
+    <p>Choose how you'd like to sign in</p>
+    <button class="btn-shop">Sign in with shop</button>
+    <div class="or-separator">or</div>
+    <form action="/login" method="POST" class="login-form">
+      <input type="email" name="email" placeholder="Email" required />
+      <button type="submit">Continue</button>
+    </form>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</main>

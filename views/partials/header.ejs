@@ -2,8 +2,8 @@
   <nav>
     <a href="/">Home</a>
     <a href="/login">Login</a>
-    <a href="/signup">Signup</a>
-    <% if (typeof session !== 'undefined' && session.userId) { %>
+    <a href="/register">Signup</a>
+    <% if (user) { %>
       <a href="/logout">Logout</a>
     <% } %>
   </nav>

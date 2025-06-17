@@ -1,0 +1,19 @@
+<% layout('layout') -%>
+<link rel="stylesheet" href="/css/style.css" />
+
+<section class="orders-wrapper">
+  <h2>My Orders</h2>
+  <% if (orders.length === 0) { %>
+    <p>You have no orders yet.</p>
+  <% } else { %>
+    <ul>
+      <% orders.forEach(order => { %>
+        <li>
+          <strong>Product:</strong> <%= order.product %> |
+          <strong>Amount:</strong> <%= order.amount %> |
+          <strong>Date:</strong> <%= new Date(order.date).toLocaleDateString() %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>

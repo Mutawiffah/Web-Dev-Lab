@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <% include ./partials/head %>
-</head>
-<body>
-  <% include ./partials/header %>
+  <%- include("partials/head") %>
+  <body>
+    <% if (title !== 'Login' && title !== 'Register') { %>
+      <%- include("partials/header") %>
+    <% } %>
 
-  <main>
-    <%- body %>
-  </main>
+    <main>
+      <%- body %>
+    </main>
 
-  <% include ./partials/footer %>
-</body>
+    <% if (title !== 'Login' && title !== 'Register') { %>
+      <%- include("partials/footer") %>
+    <% } %>
+  </body>
 </html>
