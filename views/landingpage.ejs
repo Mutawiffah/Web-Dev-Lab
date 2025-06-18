@@ -1,49 +1,43 @@
-<div id="tickerBanner" class="ticker__wrapper">
-  <span>
-    Be the first to explore the debut pieces from KENT&CURWEN —
-    <a href="#newsletter">Subscribe now</a> for exclusive updates! Free shipping on orders over £400
-    <button class="close-btn" aria-label="Close">×</button>
-  </span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kent & Curwen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-<div class="top-nav">
-  <div class="nav-left">
-    <a href="#">Shop</a>
-    <a href="#">Explore</a>
-    <a href="#">Search</a>
+  <!-- Ticker -->
+  <div class="ticker__wrapper">
+    Be the first to explore the debut pieces from KENT&CURWEN — <a href="#">Subscribe now</a> for exclusive updates! Free shipping on orders over £400
+    <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
   </div>
-  <div class="nav-right">
-    <a href="#">Account</a>
-    <a href="#">Bag</a>
-    <a href="#">PK/GBP</a>
-  </div>
-</div>
 
-
-<div class="image-container">
-  <img src="/assets/top.jpg" alt="Auto Show Image">
-  <img src="/assets/men.jpg" alt="Men's Collection">
-  <img src="/assets/women.jpg" alt="Women's Collection">
-  <img src="/assets/brand.jpg" alt="Discover the Brand">
-  <img src="/assets/logo.jpg" alt="Kent & Curwen Logo">
-</div>
-
-<section class="hero-section">
-  <div class="image-brand-top">
-    <section>
-      <img src="/assets/top.jpg" alt="Auto Show Image" style="width: 100%; height: auto;">
-    </section>
-
-    <div class="hero-content">
-      <img src="/assets/logo.jpg" alt="Kent & Curwen Logo" class="logo">
-      <p class="text">DISCOVER THE SHOW AW25</p>
+  <!-- Navigation -->
+  <div class="top-nav">
+    <div class="nav-left">
+      <a href="/shop">Shop</a>
+      <a href="#">Explore</a>
+      <a href="#">Search</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">Account</a>
+      <a href="#">Bag</a>
+      <a href="#">PK/GBP</a>
     </div>
   </div>
-</section>
 
-<section class="collections container-fluid p-0 my-0">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <p>Discover the Brand</p>
+      <button class="btn btn-light">Learn More</button>
+    </div>
+  </section>
+
+  <section class="collections container-fluid p-0 my-0">
   <div class="row g-0">
-
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="collection">
         <img src="/assets/men.jpg" alt="Men's Collection" class="w-100 img-fluid">
@@ -53,7 +47,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="collection">
         <img src="/assets/women.jpg" alt="Women's Collection" class="w-100 img-fluid">
@@ -76,8 +69,5 @@
   </div>
 </section>
 
-<script>
-  document.querySelector('.close-btn').addEventListener('click', function () {
-    document.getElementById('tickerBanner').style.display = 'none';
-  });
-</script>
+</body>
+</html>

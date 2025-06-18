@@ -26,7 +26,8 @@ server.use(session({
 
 server.use((req, res, next) => {
   res.locals.user = req.session.userId ? true : null;
-  next();
+    res.locals.title = 'Dashboard'; // default title
+    next();
 });
 
 server.set("view engine","ejs");
@@ -45,6 +46,18 @@ server.use("/", authRoutes);
 const orderRoutes = require("./routes/orderRoutes");
 server.use("/", orderRoutes);
 
+const adminRoutes = require('./routes/adminRoutes');
+server.use('/admin', adminRoutes);
+
+const cartRoutes = require('./routes/cartRoutes');
+server.use('/cart', cartRoutes);
+
+const productRoutes = require('./routes/productRoutes');  
+server.use('/', productRoutes);
+
+const complaintRoutes = require('./routes/complaintRoutes');
+server.use(complaintRoutes);
+
 server.get("/cv", (req, res) => {
   res.render("cv", { title: "CV" });
 });
@@ -60,7 +73,7 @@ server.get("/", (req, res) => {
 });
 
 server.get("/login", (req, res) => {
-  res.render("login", { title: "Login", pageStyle: "login" });
+  res.render("login", { title: "Login", pageStyle: "login", error:null });
 });
 
 server.get("/signup", (req, res) => {

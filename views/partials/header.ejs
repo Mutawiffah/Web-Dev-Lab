@@ -1,9 +1,60 @@
+
+
+<style>header {
+  background-color: grey;
+  padding: 20px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #f0c14b;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+</style>
+
 <header>
   <nav>
     <a href="/">Home</a>
-    <a href="/login">Login</a>
-    <a href="/register">Signup</a>
-    <% if (user) { %>
+    <% if (!user) { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    <% } else { %>
+      <a href="/contact">Contact Us</a>
+      <a href="/my-complaints">My Complaints</a>
+      <% if (user.isAdmin) { %>
+        <a href="/admin/complaints">Admin Complaints</a>
+      <% } %>
       <a href="/logout">Logout</a>
     <% } %>
   </nav>

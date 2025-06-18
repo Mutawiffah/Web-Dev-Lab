@@ -1,0 +1,27 @@
+<% layout('layout') %>
+
+<main class="container pt-5">
+  <% if (locals.flash) { %>
+    <div class="alert alert-<%= locals.flash.type %> text-center position-fixed top-10 flash-msg">
+      <%= locals.flash.message %>
+    </div>
+  <% } %>
+
+  <div class="mx-auto" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Contact Us / Submit Complaint</h2>
+
+    <form action="/contact" method="POST" class="border p-4 rounded shadow-sm bg-light">
+      <div class="mb-3">
+        <label for="orderId" class="form-label">Order ID</label>
+        <input type="text" class="form-control" id="orderId" name="orderId" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit Complaint</button>
+    </form>
+  </div>
+</main>

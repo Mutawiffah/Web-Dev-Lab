@@ -1,0 +1,42 @@
+```ejs
+<% layout('layout') %>
+
+<main class="container pt-5">
+
+  <% if (locals.flash && locals.flash.message) { %>
+    <div class="alert alert-<%= locals.flash.type %> text-center position-fixed top-10 flash-msg">
+      <%= locals.flash.message %>
+    </div>
+  <% } %>
+
+  <h2 class="mb-4 text-center">All User Complaints</h2>
+
+  <% if (!complaints || complaints.length === 0) { %>
+    <div class="alert alert-info text-center">
+      No complaints found.
+    </div>
+  <% } else { %>
+    <div class="row gy-3">
+      <% complaints.forEach(c => { %>
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Order ID: <%= c.orderId %></h5>
+              <p class="card-text mb-1"><strong>Message:</strong> <%= c.message %></p>
+              <p class="card-text mb-1">
+                <strong>User:</strong> <%= c.userId.name %> &lt;<%= c.userId.email %>&gt;
+              </p>
+              <p class="card-text">
+                <small class="text-muted">
+                  Submitted at: <%= c.submittedAt.toLocaleString() %>
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+</main>
+```

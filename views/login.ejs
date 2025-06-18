@@ -1,21 +1,122 @@
-<link rel="stylesheet" href="/css/login.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
 
 <main class="login-wrapper">
   <div class="login-container">
     <div class="logo">
-        <img src="logo.jpg" alt="Kent & Curwen Logo" />
+      <img src="/assets/logo.jpg" alt="Kent & Curwen Logo" />
     </div>
     <h2>Sign in</h2>
     <p>Choose how you'd like to sign in</p>
-    <button class="btn-shop">Sign in with shop</button>
+
+    <% if (error) { %>
+      <div class="error-message" style="color: red; margin: 10px 0;"><%= error %></div>
+    <% } %>
+
+    <button id="createAccountButton" class="btn-shop">Create New Account</button>
+    <button id="adminLoginButton" class="btn-shop">Admin Login</button>
+
     <div class="or-separator">or</div>
+
     <form action="/login" method="POST" class="login-form">
       <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
       <button type="submit">Continue</button>
     </form>
+
     <div class="footer-links">
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
     </div>
   </div>
 </main>
+
+<!-- Modal for Create Account -->
+<div id="createAccountModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img src="/assets/logo.jpg" alt="Kent & Curwen Logo" class="modal-logo">
+    <h2>Create New Account</h2>
+    <form action="/register" method="POST" class="create-account-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit">Create Account</button>
+    </form>
+    <div class="terms-privacy">
+      <a href="#">Privacy</a> | <a href="#">Terms</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Admin Login -->
+<div id="adminLoginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-admin">&times;</span>
+    <img src="/assets/logo.jpg" alt="Kent & Curwen Logo" class="modal-logo">
+    <h2>Admin Login</h2>
+    <form action="/login" method="POST" class="admin-login-form">
+      <label for="adminEmail">Email</label>
+      <input type="email" id="adminEmail" name="email" placeholder="Enter admin email" required>
+
+      <label for="adminPassword">Password</label>
+      <input type="password" id="adminPassword" name="password" placeholder="Enter admin password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Get Create Account Modal
+  const modal = document.getElementById("createAccountModal");
+  const createAccountButton = document.getElementById("createAccountButton");
+  const closeButton = document.getElementsByClassName("close")[0];
+
+  createAccountButton.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  closeButton.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  // Get Admin Modal
+  const adminModal = document.getElementById("adminLoginModal");
+  const adminLoginButton = document.getElementById("adminLoginButton");
+  const closeAdminButton = document.getElementsByClassName("close-admin")[0];
+
+  adminLoginButton.onclick = function () {
+    adminModal.style.display = "block";
+  }
+
+  closeAdminButton.onclick = function () {
+    adminModal.style.display = "none";
+  }
+
+  // Global click to close any modal
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+    if (event.target == adminModal) {
+      adminModal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

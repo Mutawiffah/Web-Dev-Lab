@@ -6,22 +6,21 @@ body {
   font-size: 14px;
   letter-spacing: .06em;
   line-height: 1.3;
-  max-width: 100%;
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
-
 .ticker__wrapper {
-  position: relative;
   background-color: #fbe6e9;
   color: #000;
   font-size: 14px;
   text-align: center;
   padding: 10px 50px 10px 20px;
+  position: relative;
+  z-index: 10;
 }
 
-.ticker__wrapper span a {
+.ticker__wrapper a {
   text-decoration: underline;
   color: #000;
 }
@@ -35,59 +34,46 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #000;
   font-weight: bold;
 }
 
+/* Navbar */
 .top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px 50px;
+  margin-top: 40px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 998;
+  position: relative;
 }
 
-body {
-  margin: 0;
-  padding-top: 80px; /* Space to ensure content doesn't overlap with fixed navbar */
-}
-
-.nav-left, .nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.nav-left {
-  justify-content: flex-start; /* Align left */
-}
-
-.nav-right {
-  justify-content: flex-end; /* Align right */
-}
-
-.nav-left a, .nav-right a {
-  color: #333;
+.nav-left a,
+.nav-right a {
+  color: #000;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
+  margin: 0 10px;
+  font-weight: 500;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.1em;
   transition: color 0.3s ease;
 }
 
-.nav-left a:hover, .nav-right a:hover {
+.nav-left a:hover,
+.nav-right a:hover {
+  text-decoration: underline;
   color: #50292e;
 }
+
+/* Hero */
 .hero-section {
   position: relative;
   width: 100%;
+  height: 100vh;
+  background: url('/assets/top.jpg') no-repeat center center/cover;
   text-align: center;
 }
 
@@ -110,50 +96,7 @@ body {
   font-weight: bold;
 }
 
-.collections {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.row {
-  margin: 0 !important;
-}
-
-.collection {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding: 0 !important;
-}
-
-.collection img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-}
-
-.collection:hover img {
-  transform: scale(1.05);
-}
-
-.collection .overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;  
-  width: 90%;
-  text-align: center;
-}
-
-.collection .overlay h2 {
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-}
-
+/* Button */
 .btn-light {
   background: white;
   color: black;
@@ -171,64 +114,88 @@ body {
   color: white;
 }
 
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 50px 0;
+.collection {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.collections {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.collections + section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+.collection {
+  padding: 0 !important;
+}
+
+.collection img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.collection img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.collection:hover img {
+  transform: scale(1.05);
+}
+
+.collection .overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  width: 90%;
   text-align: center;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 30px;
+.collection .overlay h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 
-.email-signup {
-  width: 100%;
-  max-width: 400px;
+/* Footer */
+footer {
+  background: white;
+  color: black;
+  padding: 40px 20px;
+  text-align: left;
 }
 
-.email-signup h3 {
-  font-size: 24px;
+.email-footer-text {
+  font-size: 14px;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
-.email-signup p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.email-signup a {
-  display: inline-block;
-  font-size: 16px;
-  color: #fff;
-  text-decoration: underline;
-  padding: 10px 20px;
-  background-color: #000;
-  border-radius: 5px;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.footer-links ul li a:hover {
-  text-decoration: underline;
+footer p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+  max-width: 600px;
 }
 
 .signup-link {
@@ -237,96 +204,7 @@ footer {
   color: black;
 }
 
-.brand-text h2 {
-  font-size: 2rem;
-  color: white;
-}
-
-.brand-text .btn {
-  margin-top: 10px;
-}
-
-.image-container {
-  display: flex;
-  justify-content: space-between;   
-  gap: 20px;                        
-  flex-wrap: wrap;                  
-  padding: 20px;
-  margin-top: 50px;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 300px;               
-  height: auto;                    
-  border-radius: 10px;             
-  object-fit: cover;               
-}
-
-
-@media (max-width: 768px) {
-  .image-container {
-    flex-direction: column;         
-    align-items: center;         
-  }
-
-  .image-container img {
-    width: 80%;                      
-    margin-bottom: 20px;          
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content .logo {
-    width: 120px;
-  }
-
-  .btn-light {
-    padding: 8px 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  .ticker__wrapper {
-    padding: 10px 40px 10px 10px;
-  }
-
-  .ticker__wrapper .close-btn {
-    right: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-nav {
-    padding: 10px 20px;
-  }
-
-  .nav-left a, .nav-right a {
-    font-size: 12px;
-  }
-
-  .nav-left a {
-    margin: 0 10px;
-  }
-
-  .nav-right a {
-    margin: 0 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.footer-options p {
+  display: inline-block;
+  margin-right: 30px;
 }

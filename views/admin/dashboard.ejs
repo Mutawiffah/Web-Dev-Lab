@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Admin Dashboard</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card text-white bg-primary">
+        <div class="card-body">
+          <h5 class="card-title">Total Products</h5>
+          <p class="card-text fs-3"><%= productCount %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-white bg-success">
+        <div class="card-body">
+          <h5 class="card-title">Total Orders</h5>
+          <p class="card-text fs-3"><%= orderCount %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 d-flex gap-3">
+    <a href="/admin/products" class="btn btn-outline-dark">Manage Products</a>
+    <a href="/admin/products/add" class="btn btn-outline-primary">Add Product</a>
+    <a href="/admin/orders" class="btn btn-outline-dark">View Orders</a>
+  </div>
+</div>
